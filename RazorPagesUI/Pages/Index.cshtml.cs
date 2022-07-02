@@ -13,11 +13,15 @@ public class IndexModel : PageModel
     }
 
     [BindProperty(SupportsGet = true)]
-    public int Id { get; set; }
+    public string FirstName { get; set; }
 
     public void OnGet()
     {
-        _logger.LogInformation("inside OnGet()");
+        _logger.LogInformation("inside OnGet(): FirstName = {FirstName}", FirstName);
+        if (string.IsNullOrWhiteSpace(FirstName))
+        {
+            FirstName = "User";
+        }
     }
 }
 
