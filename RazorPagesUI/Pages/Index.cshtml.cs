@@ -12,9 +12,12 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
+    [BindProperty(SupportsGet = true)]
+    public int Id { get; set; }
+
     public void OnGet()
     {
-
+        _logger.LogInformation("inside OnGet()");
     }
 }
 
