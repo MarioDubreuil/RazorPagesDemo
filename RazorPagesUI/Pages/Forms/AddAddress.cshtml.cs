@@ -23,7 +23,7 @@ namespace RazorPagesUI.Pages.Forms
             {
                 return Page();
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index", new { Address.City });
         }
     }
 }
